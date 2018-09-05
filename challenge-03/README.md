@@ -50,9 +50,9 @@ valor dessa propriedade a quantidade passada por parâmetro;
 booleano que representa "verdadeiro";
 */
 
-pessoa.andar = function (x){
-    caminhouQuantosMetros + x ;
-    andando = true;
+pessoa.andar = function (m){
+    pessoa.caminhouQuantosMetros + m ;
+    pessoa.andando = true;
 }
 
 
@@ -62,7 +62,7 @@ da propriedade `andando` para o valor booleano que representa "falso".
 */
 
 pessoa.parar = function (){
-    andando: false;
+    pessoa.andando: false;
 }
 
 /*
@@ -157,18 +157,22 @@ Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
 com metragens diferentes passadas por parâmetro.
 */
 
-
+pessoa.andar(50);
+pessoa.andar(150);
+pessoa.andar(180);
 
 /*
 A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-?
+
+//pessoa.andar true
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-?
+
+pessoa.parar
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -180,7 +184,8 @@ comentários inline ao lado da instrução para mostrar a resposta retornada)
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+//pessoa.caminhouQuantosMetros
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -201,14 +206,18 @@ correta, de acordo com os dados inseridos no objeto.
 */
 
 pessoa.apresentacao = function (){
-  if (pessoa.sexo !== 'feminino'){
-    return 'Eu sou a';
-  } if else (pessoa.idade === 1){
-    return 'ano';
-  } if else (pessoa.caminhouQuantosMetros === 1){
-    return 'metros';
+  var sexo ='o';
+  var distancia = 'metros';
+  var idade = 'anos';
+
+  if (pessoa.sexo === 'feminino'){
+    return sexo = 'a';
+  }if else (pessoa.idade === 1){
+    return idade = 'ano';
+  }if else (pessoa.caminhouQuantosMetros === 1){
+    return distancia = 'metro';
   } else {
-    return 'Olá, eu sou o' + pessoa.nomecompleto , + 'tenho' + pessoa.idade + 'anos', + pessoa.altura + 'meu peso é' + pessoa.peso + 'e,     só hoje, eu já caminhei + pessoa.caminhouQuantosMetros + 'metros!';
+    return 'Olá, eu sou' + sexo + pessoa.nomecompleto , + 'tenho' + pessoa.idade + ano + pessoa.altura + 'meu peso é' + pessoa.peso + 'e, só hoje, eu já caminhei' + pessoa.caminhouQuantosMetros + distancia + '!';
   }
 }
 
